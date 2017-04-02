@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+  - docker
+
+after_success:
+  - docker build -t alexbrand/vue-cli:latest .
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker push alexbrand/vue-cli:latest
