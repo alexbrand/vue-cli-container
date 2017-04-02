@@ -6,6 +6,6 @@ services:
   - docker
 
 script:
-  - docker build -t alexbrand/vue-cli:latest .
+  - docker build -q -t alexbrand/vue-cli:latest .
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - docker push alexbrand/vue-cli:latest
